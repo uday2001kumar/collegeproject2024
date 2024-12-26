@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body{
+            margin: 0px;
+            height: 100%;
+        }
+        .upperblock{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(233, 52, 163);
+            text-align: center;
+            font-size: 40px;
+        }
+        nav ul{
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            margin: 0px; 
+            background-color:rgba(0, 0, 0, 0.404);
+            padding: 20px;
+            border-radius: 7px;
+        }
+        nav ul li{
+            list-style-type:none;
+        }
+        nav ul li a{
+            text-decoration: none;
+            /* background-color:rgba(255, 255, 255, 0.37); */
+            font-weight: bolder;
+            padding:10px 30px 10px 30px;
+            font-size: 20px;
+        }
+        nav ul li a:hover{
+            background-color:white;
+            border-radius: 10px;
+            
+        }
+        img{
+            width: 170px;
+            height: 170px;
+            border-radius: 6px;
+        }
+        footer{
+            position: relative;
+            bottom: 0px;
+            width: 100%;
+        }
+        .footer-container{
+            background-color: rgba(10, 2, 2, 0.795);
+            border: 2px solid;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            color: white;
+        }
+        .footer-container a{
+            text-decoration: none;
+            color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="main-block">
+    <div class="upperblock">
+        <img src="{% static 'images/slogo2.jpg' %}" alt="student_icon">
+        <h2 style="color: white;">Welcome to Student  App</h2>
+        <img src="{% static 'images/slogo3.jpg' %}" alt="student_icon2">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'shome' %}"> Home</a></li>
+            <li><a href="{% url 'lb' %}">Library</a></li>
+            <li><a href="{% url 'timet' %}">Time Table</a></li>
+            <li><a href="{% url 'er' %}">Exam Result</a></li>
+            <li><a href="{% url 'home' %}">Logout</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Your Institution Name. All rights reserved.</p>
+              <a href="">Privacy Policy</a>
+              <a href="">Terms of Service</a>
+              <a href="">Contact Us</a>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

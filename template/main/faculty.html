@@ -1,0 +1,65 @@
+{% extends 'main/nav.html' %}
+{% load static %}
+
+{% block title %}
+    Faculty
+{% endblock %}
+
+{% block content %}
+    <h1>Faculty Members</h1>
+    {% if f %}
+        <div class="faculty-list">
+            {% for faculty in f %}
+                <div class="faculty-member">
+                    <img 
+                        src="{{ faculty.fac_profile.url}}" 
+                        alt="{{ faculty.fac_name }}" 
+                        class="faculty-image">
+                    <div class="faculty-info">
+                        <p><strong>ID:</strong> {{ faculty.fac_id }}</p>
+                        <p><strong>Name:</strong> {{ faculty.fac_name }}</p>
+                        <p><strong>Dept:</strong> {{ faculty.fac_dep }}</p>
+                        <p><strong>Sub:</strong> {{ faculty.fac_sub }}</p>
+                        <p><strong>Experience:</strong> {{ faculty.fac_exp }} years</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No faculty members available.</p>
+    {% endif %}
+{% block styles %}
+    <style>
+        .faculty-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 100px;
+            padding: 20px 50px 40px 50px;
+            
+        }
+        .faculty-member {
+            background: #f9f9f9;
+            border: 1px solid #ddd6d6;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 100%;
+            transition: transform 0.3s ease;
+            box-shadow: 5px 5px 5px 5px rgba(212, 202, 202, 0.753);
+        }
+        .faculty-member:hover {
+            transform: scale(1.01);
+        }
+        .faculty-image {
+            width: 150px;
+            height:150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .faculty-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+    </style>
+{% endblock %}
+{% endblock %}

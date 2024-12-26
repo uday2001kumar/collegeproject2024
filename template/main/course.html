@@ -1,0 +1,63 @@
+{% extends 'main/nav.html' %}
+{% load static %}
+{% block title %}
+Course
+{% endblock %}
+{% block content %}
+<style>
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+        width: 200px;
+        height: 200px;
+        padding: 20px 0px 0px 50px;
+        border-radius: 10px;
+    }
+    .card-content {
+        padding:0px 15px 15px 15px;
+    }
+    .card-title {
+        font-size: 1.5rem;
+        color: #333;
+    }
+    .card-text {
+        font-size: 1rem;
+        color: #555;
+    } 
+</style>
+<h2 style="text-align: center;color:red">Avialable Course</h2>
+<div class="container">
+    {% for course in c1 %}
+    <div class="card">
+        <img src="{{ course.img_course.url }}" alt="{{ course.c_name }}" />
+        <div class="card-content">
+            <p class="card-title">{{ course.c_name }}</p>
+            <p class="card-text"><strong>Course Id:</strong> {{ course.c_id }}</p>
+            <p class="card-text"><strong>Branch:</strong> {{ course.c_branch }}</p>
+            <p class="card-text"><strong>Duration:</strong> {{ course.c_duration }}Years</p>
+            <p class="card-text"><strong>Fee:</strong> ₹{{ course.c_fee }}</p>
+            <!-- <p class="card-text"><strong>Hostel:</strong> {{ course.c_hostel }}</p> -->
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

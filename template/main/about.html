@@ -1,0 +1,66 @@
+{% extends 'main/nav.html' %}
+{% load static %}
+{% block title %}
+About
+{% endblock %}
+{% block content %}
+<style>
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.introduction, .mission-objectives, .phases {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.introduction p, .phases p {
+    text-indent: 50px;
+}
+
+.introduction img, .mission-objectives img, .phases img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.img1{
+width: 1100px;
+height: 200px;
+}
+
+</style>
+ <main>
+        <section class="introduction">
+            <h2>Origin and History</h2>
+            <img src="{% static 'images/ou1.jpg' %}" alt="Nawab Osman Ali Khan, the founder of Osmania University" class="img1">
+            <p>Osmania University is named after its founder, Nawab Osman Ali Khan, the seventh Nizam of Hyderabad, who, through a firman (or Royal Charter), brought the University into existence in 1917. It is the seventh oldest in the country and the third oldest in South India. Though the need for the University for the Hyderabad State was felt both by the intelligentsia and the people for a long time, the initiative came from a civil servant, Sir Akbar Hydari, who was then the Home Secretary to the State Government.</p>
+        </section>
+
+        <section class="mission-objectives">
+            <h2>Mission and Objectives</h2>
+            <img src="{% static 'images/ou2.jpeg' %}" alt="Mission and Objectives of Osmania University" class="img1">
+            <ul>
+                <li>The ancient and modern, the oriental and occidental arts and sciences are synthesized in such a manner that the defects of the present system of education are rectified.</li>
+                <li>The ancient as well as modern methods of physical, intellectual, and spiritual education are to be fully utilized along with an effort for the propagation of knowledge; the moral improvement of the students is regulated on the one hand, and research work of a high order in all branches of knowledge is conducted on the other.</li>
+            </ul>
+        </section>
+
+        <section class="phases">
+            <h2>Development Phases</h2>
+            <img src="{% static 'images/inde-2.jpg' %}" alt="Development phases of Osmania University" class="img1">
+            <h3>First Phase (1917 to 1947)</h3>
+            <p>This phase was characterized by Urdu as the medium of instruction in all branches of higher education, including Medicine and Engineering. During this time, efforts were made to establish several teaching departments as well as to structure academic programs.</p>
+            
+            <h3>Second Phase (1948 to 1968)</h3>
+            <p>The second phase of the University spans the period 1948-1968, during which in 1968, the University celebrated its 'Golden Jubilee'. The year 1948 was historic for two reasons. In the first place, the princely State of Hyderabad became a part of newly Independent India.</p>
+            
+            <h3>Third Phase (1969 to 1993)</h3>
+            <p>The period between the Golden Jubilee (1968) and the Platinum Jubilee (1993) can be considered the Third Phase. During this phase, the University also witnessed considerable growth in research and development activity.</p>
+        </section>
+    </main>
+{% endblock %}

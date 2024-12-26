@@ -1,0 +1,61 @@
+{% extends 'student/nhome.html' %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="container1">
+        {% for student in students %}
+        <img src="{{ student.photo.url }}" alt="Photo of {{ student.first_name }} {{ student.last_name }}">
+            <table>
+                <tr><td style="font-weight: bold;">FirstName</td><td> {{ student.s_roll }}</td></tr>
+                <tr><td style="font-weight: bold;">FirstName</td><td> {{ student.first_name }}</td></tr>
+                <tr><td style="font-weight: bold;">LastName </td><td> {{ student.last_name }}</td></tr>
+                <tr><td style="font-weight: bold;">Course   </td><td> {{ student.course }}</td></tr>
+                <tr><td style="font-weight: bold;">Email    </td><td> {{ student.email }}</td></tr>
+                <tr><td style="font-weight: bold;"> Mobile  </td><td>  {{ student.mobile }}</td></tr>
+                <tr><td style="font-weight: bold;"> Address  </td><td> {{ student.address }}, {{ student.city }}, {{ student.state }}</td></tr>
+            </table>
+        {% endfor %}
+    </div>
+    
+</div>
+    <style>
+        .main-container{
+            display: flex;
+        }
+        .container1{
+            border-radius: 9px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin:10px 10px 10px 10px;
+            font-size: 20px;
+            box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+        }
+        .container2{
+            border: 3px solid;
+            width: 100%;
+            margin:10px 10px 10px 10px;
+            padding: 20px;
+        }
+        .container1 img{
+            border-radius: 50%;
+            margin-left:40px;
+            height: 200px;
+            width: 200px;
+        }
+        td{
+            text-align: left;
+            margin-bottom: 10px;
+            padding: 10px 10px 10px 30px;
+        }
+        .container2 img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+{% endblock %}

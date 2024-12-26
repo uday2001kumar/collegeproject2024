@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main/nav.css' %}">
+    <title>{% block title %}Default Title{% endblock %}</title>
+</head>
+<body>
+    <div class="header">
+        <header>
+            <h2>UNIVERSITY OF POST GRADUATION COLLEGE(OU),SECUNDERBAD.</h2>
+            <img src="static/images/logo1.png" alt="logo1">
+        </header>
+    </div>
+<div class="navbar">
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'courseview' %}">Course</a>
+    <a href="{% url 'faculty' %}">Faculty</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'sloginview' %}">StudentLogin</a>
+    <a href="{% url 'signinview' %}">Logut</a>
+    
+</div>
+
+<div class="content">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+<div class="footer">
+    <div class="address">
+        <h3>Address</h3>
+        <p>123 Main Street</p>
+        <p>City, State, 12345</p>
+        <p>Country</p>
+    </div>
+    <div class="contact-us">
+        <h3>Contact Us</h3>
+        <p>Mobile: +1234567890</p>
+        <p>Email: example@gmail.com</p>
+    </div>
+</div>
+
+</body>
+</html>

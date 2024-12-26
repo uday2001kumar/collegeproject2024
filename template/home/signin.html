@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    <script src="{% static 'js/home/signup.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 >Signup</h1>
+        <form action="{% url 'signin' %}" method="post" onsubmit="sub(event)" id="Myform">
+            {% csrf_token %}
+        <h2 id="msg1" style="font-size: 18px; color: red;text-align: center;">{{s1}}</h2>
+        <h2 id="msg2" style="font-size: 18px; color: red;text-align: center;">{{s2}}</h2>
+        <h2 id="msg2" style="font-size: 18px; color: red;text-align: center;">{{s3}}</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" maxlength="10" required>
+                <h2 id="usermsg" style="font-size: 12px; color: red;"></h2>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <h2 id="emailmsg" style="font-size: 12px; color: red;"></h2>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" maxlength="6" required>
+                <h2 id="pasmsg" style="font-size: 12px; color: red;"></h2>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+           
+            <button type="submit" id="btn" onclick="sub()">Sign Up</button>
+            <p style="text-align: center;">If you have Already Account<br><a href="{% url 'loginview' %}" style="text-decoration: none;">Click here to login</a></p>
+        </form>
+    </div>
+</body>
+</html>
